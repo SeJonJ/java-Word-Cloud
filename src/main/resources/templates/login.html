@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>H&J Project Login</title>
+  <link rel="stylesheet" href="/css/login_style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="/js/login_script.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;900&display=swap');
+</style>
+
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="이름"/>
+      <input type="text" placeholder="아이디"/>
+      <input type="password1" placeholder="비밀번호"/>
+      <input type="password2" placeholder="비밀번호 확인"/>
+      <input type="text" placeholder="이메일주소"/>
+
+      <button onclick="test()">회원가입</button>
+      <p class="message">Already registered? <a href="/login">Sign In</a></p>
+
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="아이디"/>
+      <input type="password" placeholder="비밀번호"/>
+      <button>login</button>
+      <p class="message">아이디가 없다면? <a href="/members/newregisters">회원가입</a></p>
+    </form>
+  </div>
+</div>
+<!-- partial -->
+
+</body>
+</html>

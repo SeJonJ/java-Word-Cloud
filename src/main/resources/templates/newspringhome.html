@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 문법을 사용하기 위해 선언 -> th 로 www.thyleaf.org 를 연결-->
+
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" th:href="@{/assets/style/common.css}" />
+
+    <script src="/assets/lib/jquery-3.5.0.min.js"></script>
+    <script src="/assets/lib/jquery.tmpl.min.js"></script>
+    <script src="/assets/lib/swiper.min.js"></script>
+    <script src="/assets/script/common.js"></script>
+    <script src="/assets/lib/main.js"></script>
+
+    <audio id='sigongmp3' src='/assets/mp3/sigong.mp3'></audio>
+    <audio id='sigongjoamp3' src='/assets/mp3/시공좋아시공좋아.mp3'></audio>
+    <audio id='civilizationmp3' src="https://www.youtube.com/embed/WQYN2P3E06s" autoplay></audio>
+
+ <!--<link type="text/css" rel="stylesheet" href="assets/style/sigong.css"/>-->
+
+    <title>H &amp; J Project</title>
+</head>
+
+<body>
+    <header id="home" class="top-header">
+        <div class="top">
+            <a href="/">
+                <h1>
+                    <span class="blind">H &amp; J&#58; Project</span>
+                </h1>
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home">
+                            <span>Home</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#feature">
+                            <span>신작게임</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <span>추천게임</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#salegame">
+                            <span>할인게임</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#review_board">
+                            <span>리뷰게시판</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#free_board">
+                            <span>자유게시판</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#q&a_board">
+                            <span>Q&A게시판</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#update">
+                            <span>Updates</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#suggest">
+                            <span>관리자에게 건의하기</span>
+                            <span class="bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-nav">
+                <a id="btnMenu" href="javascript:void(0);">
+                    <span class="blind">메뉴</span>
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#feature">인기게임</a></li>
+                    <li><a href="#about">추천게임</a></li>
+                    <li><a href="#salegame">할인게임</a></li>
+                    <li><a href="#review_board">리뷰게시판</a></li>
+                    <li><a href="#free_board">자유게시판</a></li>
+                    <li><a href="#q&a_board">Q&A게시판</a></li>
+                    <li><a href="#update">Updates</a></li>
+                    <li><a href="#suggest">관리자에게 건의하기</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slogan-box">
+            <h2>
+                <span>H <span class="sigongmanse">&amp;</span> J Project</span>
+            </h2>
+            <p class="mt30"></p>
+
+            <!--로그인 하는 경로 : 로그인 회원가입 회원 리스트 확인 --->
+            <a href="/login" class="mt50">로그인 하기</a>
+            <a href="/members/newregisters" class="mt50">회원가입 하기</a>
+            <a href="/members/member_List" class="mt50">회원 리스트 확인</a>
+        </div>
+    </header>
+    <div class="contents-wrap">
+    <section id="feature" class="container update-box"> <!-- Game Updates Start -->
+        <article>
+            <h3>인기 게임</h3>
+            <p>
+                엄청난 인기를 자랑하고 있는 게임들입니다. 플레이해 보세요.
+            </p>
+            <div class="swiper">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="mountandblade" >
+                                <a href="https://www.taleworlds.com/en/Games/Bannerlord" target="_blank">
+                                    <div class="contents">
+                                        <strong>Mount &amp; Blade 2	&#58; BANNERLORD</strong>
+                                        <p>
+                                            &#58; 전략, 외교, 전쟁 <br> 모든것이 존재하는 당신을 위한 게임
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="swiper-slide" onclick="window.open('https://www.youtube.com/embed/WQYN2P3E06s');">
+                            <div class="civilization">
+                                <a href="https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/?l=koreana" target="_blank">
+                                    <div class="contents">
+                                        <strong>시드 마이어의 문명® VI</strong>
+                                        <p>
+                                            게임사는 비용보다 <br> 전기세가 더 많이 나오는 게임
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="swiper-slide" onclick="sigongmp3()">
+                            <div class="sigong">
+                                <a href="https://heroesofthestorm.com/ko-kr/" target="_blank">
+                                    <div class="contents">
+                                        <strong>Heroes of the Storm</strong>
+                                        <p>
+                                            시공의 폭풍은 정말 최고야!
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="swiper-slide">
+                            <div class="europa">
+                                <a href="https://store.steampowered.com/app/236850/Europa_Universalis_IV/?l=koreana" target="_blank">
+                                    <div class="contents">
+                                        <strong>Europa Universalis IV</strong>
+                                        <p>
+                                            내정을 열심히 하세요! <br> 잘못하다간 반란일어나서 나라가 망합니다!
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="swiper-slide">
+                            <div class="crusader">
+                                <a href="https://www.crusaderkings.com/#hero" target="_blank">
+                                    <div class="contents">
+                                        <strong>Crusader Kings II</strong>
+                                        <p>
+                                            암살...음모...계략...<br>당신의 정치력을 시험해보세요.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="swiper-slide">
+                            <div class="eveonline">
+                                <a href="https://store.steampowered.com/app/8500/_/?l=koreana" target="_blank">
+                                    <div class="contents">
+                                        <strong>EVE Online</strong>
+                                        <p>
+                                            우주는 당신의 것입니다.<br>The universe is yours.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section><!-- Game Updates End -->
+
+    <section id="about" class="container about-box"><!--About Mount and blad START -->            <article>
+                <div class="person-box">
+                    <img src="./assets/images/main/lol.png"/>
+                </div>
+                <div class="introduce-box">
+                    <div>
+                        <h3>오늘의 추천 게임</h3><!--h2-->
+                        <p>
+                            League of Legends
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <h4>
+                                딱히 추천하고 <br>싶진 않음
+                            </h4>
+                            <p>
+                                우리나라의 가장 인기 있는 <br> 게임입니다....
+                            </p>
+                        </div>
+                        <div>
+                            <h4>
+                                분식점<!--자유로운 &nbsp; &nbsp; 스킨 설정-->
+                            </h4>
+                            <p>
+                                솔적히 분식점보단<br> 레스토랑이지 <br><br><br><br>-레스토랑스
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section ><!--recommend game END -->
+
+        <section id="salegame" class="container gallery-box"> <!-- salegame Start -->
+            <article>
+                <h3>Sale for you</h3>
+                <p>
+                    무료 또는 세일
+                </p>
+                <div class="swiper">
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://www.epicgames.com/store/ko/product/pathway/home" target="_blank">
+                                        <img src="https://cdn2.unrealengine.com/egs-pathway-robotality-g2-002-1200x400-188355466.jpg" />
+                                        <div class="contents">
+                                            <strong>pathway</strong>
+                                            <p>
+                                               6월 26일 까지 무료!!
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/" target="_blank">
+                                        <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzA0MTRfMjM3/MDAxNDkyMTcxNDI1NjY3.ETrHXLj6E9fTuMtvaOD2rZihaIj1FpiUHZER-w1C914g.pJqmrDctFeR38OA1-5ZidIS13cGlJHwWhH1qsNt7Qy0g.JPEG.sizzrustory/20170313202001_1.jpg?type=w2" />
+                                        <div class="contents">
+                                            <strong>The Elder Scrolls V</strong>
+                                            <p>
+                                                60% 할인중!
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://store.steampowered.com/app/34030/Total_War_NAPOLEON__Definitive_Edition/">
+                                        <img src="https://steamcdn-a.akamaihd.net/steam/apps/34030/extras/NAPOLEON_FIRST.gif?t=1583944229" />
+                                        <div class="contents">
+                                            <strong>Total War: NAPOLEON</strong>
+                                            <p>
+                                                <br>75% 할인중
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/">
+                                        <img src="https://steamcdn-a.akamaihd.net/steam/apps/261550/extras/1.jpg?t=1589482699" />
+                                        <div class="contents">
+                                            <strong>Mount & Blade II</strong>
+                                            <p>
+                                                20% 할인중
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://store.steampowered.com/app/24780/SimCity_4_Deluxe_Edition/">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/24780/ss_460b7f3fd46dc7f8172d70e172525ecb6d66ef7f.600x338.jpg?t=1551379837" />
+                                        <div class="contents">
+                                            <strong>SimCity 4</strong>
+                                            <p>
+                                                75% 할인중
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div onclick="sigongjoamp3()">
+                                    <a href="https://www.battle.net/download/getInstallerForGame?gameProgram=HEROES_OF_THE_STORM&id=530212818.1592291573">
+                                        <img src="assets/images/main/sigong.png" />
+                                        <div class="contents">
+                                            <strong>♚♚히어로즈 오브 더 스☆톰♚♚가입시$$전원 카드팩☜☜뒷면100%증정※ ♜월드오브 워크래프트♜펫 무료증정￥ 특정조건 §§디아블로3§§★공허의유산★초상화획득기회@@ 즉시이동http://kr.battle.net/heroes/ko/</strong>
+                                            <p>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section><!--salegame END-->
+
+        <section id="review_board" class="container review_board-box"> <!-- review_board Start -->
+            <article>
+                <h3 class="tac">리뷰 게시판</h3>
+
+                <div class="resource-wrap mt80">
+                    <div>
+                        <strong>999<sup>+</sup></strong>
+                        <p>
+                            너무 재밌습니다. 시간가는줄 몰랐어요.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>997<sup>+</sup></strong>
+                        <p>
+                            여태까지 히오스를 몰랐다는게 이해가 안가네요.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>996<sup>+</sup></strong>
+                        <p>
+                            히오스는 단연컨대 최고의 게임입니다.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section> <!-- review_board End -->
+
+        <section id="free_board" class="container vehicle-box"><!--자유게시판-->
+            <article>
+                <h3>자유 게시판</h3>
+                <a href="/board/board_index.php"><input type="button" value="글 쓰러가기" /></a>
+                <p>아무 글이나 쓰세요 맘대로입니다!</p>
+            <ul>
+                <li>
+                    <div>
+                        <img src="assets/images/gif/multikill01.gif" />
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="contents">
+                                <strong>멀티킬 모드</strong>
+                                <p>
+                                    무기의 사거리에 닿는 <br> 모든 경로에 적들이 데미지를 입습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="assets/images/mode/hoursecharjingstrongmode.gif">
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="contents">
+                                <strong>말 차징 강화 모드</strong>
+                                <p>말의 충돌데미지가 <br> 강력해져 기병의 강함을 재현했습니다.</p>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="assets/images/mode/runmode.png">
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="contents">
+                                <strong>달리기 모드</strong>
+                                <p>달릴수있습니다. <br> 말처럼 뛰어다니세요! 히이잉</p>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="assets/images/mode/dmstlscj.png">
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="contents">
+                                <strong>충돌박스 수정 모드</strong>
+                                <p>캐릭터들이 겹쳐져서 보이는 <br> 문제를 해결하기 위해 각자의 <br> 충돌박스 크기를 늘렸습니다.</p>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="assets/images/mode/rltqkfahem.jpg">
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="contents">
+                            <strong>깃발 모드</strong>
+                            <p>병사들이 깃발을 좀더 많이 들고다닙니다. 좀더 멋져요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="assets/images/mode/wnrdmfruddn.png">
+                        <div>
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="blind">facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="blind">twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="blind">instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="contents">
+                                <strong>부활 모드</strong>
+                                <p>죽은뒤에 아무것도 못한다고요?<br> 걱정마세요. 다른 일반병사로 플레이해보세요.</p>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            </article>
+        </section> <!----자유게시판---->
+
+        <section id="q&a_board" class="container introuduce-box"> <!-- Q&A게시판 Start -->
+<!--            <article>-->
+<!--                <blockquote>-->
+<!--                    <p>-->
+<!--                        There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration.-->
+<!--                    </p>-->
+<!--                    <div class="mt50">-->
+<!--                        <i></i> &lt;!&ndash; tale world Logo &ndash;&gt;-->
+<!--                        <span>Tale wolrds</span>-->
+<!--                    </div>-->
+<!--                </blockquote>-->
+<!--            </article>-->
+        </section> <!-- Q&A게시판 End -->
+
+
+        <section id="update" class="container update-box"> <!-- Game Updates Start -->
+            <article>
+                <h3>Game Updates</h3>
+                <p>
+                    새로운 도전!!
+                </p>
+                <div class="swiper">
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div>
+                                    <a href="https://store.steampowered.com/newshub/app/261550/view/2199388922822905487"><img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/26623866/758b1566e26eb207d918dd46963499ec35c38cc5.png"/></a>
+                                    <div class="contents">
+                                        <strong>update</strong>
+                                        <p>
+                                            Patch Notes e1.2.0 & Beta e1.3.0
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <div class="contents">
+                                        <strong>TITLE</strong>
+                                        <p>
+                                        DESCRIPTION
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"> slide3 </div>
+                            <div class="swiper-slide"> slide4 </div>
+                            <div class="swiper-slide"> slide5 </div>
+                            <div class="swiper-slide"> slide6 </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section> <!-- Game Updates End -->
+
+        <section id="suggest" class="container contact-box"> <!-- Contact me Start -->
+            <article>
+                <div class="form-box">
+                    <h3>건의사항 보내기</h3>
+                    <p>
+                        There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration.
+                    </p>
+                    <form action="javascript:void(0);">
+                        <fieldset>
+                            <legend class="blind">메일 전송 양식</legend>
+
+                            <label>
+                                <input type="text" placeholder="Your name" />
+                            </label>
+                            <label>
+                                <input type="email" placeholder="Your email address"/>
+                            </label>
+                            <label>
+                                <input type="text" placeholder="Write a subject" />
+                            </label>
+                            <label>
+                                <textarea placeholder="Your message"></textarea>
+                            </label>
+                        </fieldset>
+                        <a href="https://www.naver.com/">
+                        <!--onclick="location.href=''-->
+                            <input type="submit" value="SUBMIT"/>
+                        </a>
+                    </form>
+                </div>
+
+                <div class="img-box">
+                    <img src="" />
+                </div>
+            </article>
+        </section><!--contact me END-->
+    </div>
+
+</body>
+</html>
+
