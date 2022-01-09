@@ -8,6 +8,7 @@ build/
 application.properties
 build/libs/
 bfg-1.14.0.jar
+gradle/wrapper
 
 ### STS ###
 .apt_generated
