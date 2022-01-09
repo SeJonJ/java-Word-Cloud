@@ -7,6 +7,7 @@ build/
 *.class
 application.properties
 build/libs/
+bfg-1.14.0.jar
 
 ### STS ###
 .apt_generated
