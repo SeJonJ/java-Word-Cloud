@@ -1,0 +1,102 @@
+@charset "utf-8";
+html, body, form, fieldset, legend, ol, li {
+	margin: 5px;
+    padding: 5px;
+}
+body {
+	background: #ffffff;
+	color: #111111;
+    padding: 20px;	
+}
+form {
+    background: #ffffff;
+    border: 5px solid black;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding: 20px;
+	width: 800px;	
+}
+/* form table{
+    border-collapse: collapse;
+} */
+form fieldset:last-of-type {
+	margin-bottom: 0;
+}
+/*
+legend tag
+*/
+form legend {
+	color: #384313;
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	text-shadow: 0 1px 1px #c0d576;
+}
+form > fieldset >  legend:before {
+	content: "Step 1: ";
+}
+
+
+form fieldset fieldset legend {
+	color: #111111;
+	font-size: 13px;
+	font-weight: normal;
+	padding-bottom: 0;
+}
+form tr {
+    background: #ffffff;
+	line-height: 30px;
+	padding: 5px 10px;
+    margin-bottom: 2px;
+    max-width: auto;
+}
+form tr td{
+    max-width: auto;
+    max-height: auto;
+    white-space:nowrap;
+    width: 200px;
+}
+form tr td:nth-child(even){
+    width: 600px;
+}
+form fieldset fieldset .line2:hover {
+	cursor: pointer;
+}				
+				
+form button {
+	background: #384313;
+	border: none;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 20px;
+	color: #ffffff;
+	display: inline-block;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+    text-shadow: 0 1px 1px #000000;
+	text-transform: uppercase;/*대문자로 바꾸는것 딱히 없어도 됨*/
+}
+					
+form button:hover {
+	background: #1e2506;
+	cursor: pointer;
+}
+h1{
+    
+    text-align: center;
+}
+.red-border {
+    border: 3px solid red;
+}
+
+.yellow-border {
+    border: 3px solid rgb(250, 233, 0);
+}
+
+.green-border {
+    border: 3px solid green;
+}
