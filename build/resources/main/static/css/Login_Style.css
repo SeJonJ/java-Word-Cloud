@@ -1,0 +1,68 @@
+login_box{
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family : "Courier new";
+  padding: 20px 0px 10px 0px;
+}
+
+.inph{
+}
+
+input[type="text"] {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 30px;
+ width: 40%;
+ background-color: #f2f2f2;
+ border: none;
+ border-bottom: 3px solid #A3A0AC;
+ font-family: "Helvetica";
+ font-size : 20px;
+ margin: 1px auto;
+}
+
+input[type="password"] {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 30px;
+ width: 40%;
+ background-color: #f2f2f2;
+ border: none;
+ border-bottom: 3px solid #A3A0AC;
+ font-family: "Helvetica";
+ font-size : 20px;
+ margin: 1px auto;
+}
+
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #31BBEE;
+  height: 45px;
+  width : 40%;
+  color: white;
+  font-size: 25px;
+  font-family: "Helvetica" ;
+  border-radius : 5px 20px 5px;
+  margin: 15px auto;
+  
+}
+
+.last{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+  font-family: "Optima"}

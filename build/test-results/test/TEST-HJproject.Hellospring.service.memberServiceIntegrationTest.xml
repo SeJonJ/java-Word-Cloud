@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HJproject.Hellospring.service.memberServiceIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-05T09:40:27" hostname="DESKTOP-1V9NOHJ" time="0.454">
+  <properties/>
+  <testcase name="중복_아이디_체크()" classname="HJproject.Hellospring.service.memberServiceIntegrationTest" time="0.249"/>
+  <testcase name="회원가입()" classname="HJproject.Hellospring.service.memberServiceIntegrationTest" time="0.204"/>
+  <system-out><![CDATA[2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [HJproject.Hellospring.service.memberServiceIntegrationTest], using SpringBootContextLoader
+2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [HJproject.Hellospring.service.memberServiceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [HJproject.Hellospring.service.memberServiceIntegrationTest]: memberServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration HJproject.Hellospring.HelloSpringApplication for test class HJproject.Hellospring.service.memberServiceIntegrationTest
+2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-01-05 18:40:27.549  INFO 10388 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1eda12b3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5006a697, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@193792e6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@21f9a305, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6ff87203, org.springframework.test.context.support.DirtiesContextTestExecutionListener@aaf4375, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f2a5064, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@43a72f0f, org.springframework.test.context.event.EventPublishingTestExecutionListener@6fe33512, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1fa77770, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@62f3ad90, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@18d63996, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6e6bd43b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4a532271, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@35b38986]
+2022-01-05 18:40:27.596  INFO 10388 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7f6936cc testClass = memberServiceIntegrationTest, testInstance = HJproject.Hellospring.service.memberServiceIntegrationTest@56bf6f1e, testMethod = 중복_아이디_체크@memberServiceIntegrationTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4ac26092 testClass = memberServiceIntegrationTest, locations = '{}', classes = '{class HJproject.Hellospring.HelloSpringApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3ad2e17, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@676cf48, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73194df, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a4621bd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48e92c5c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7690781], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2484c868]; rollback [true]
+START : execution(Long HJproject.Hellospring.service.memberService.join(Member))
+START : execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String))
+Hibernate: 
+    select
+        member0_.code as code1_0_,
+        member0_.emaddress as emaddres2_0_,
+        member0_.email as email3_0_,
+        member0_.id as id4_0_,
+        member0_.name as name5_0_,
+        member0_.passwd as passwd6_0_,
+        member0_.sex as sex7_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+END: execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String)) 31ms
+START : execution(Member HJproject.Hellospring.repository.JpamemberRepository.save(Member))
+성별 저장 : null
+email 확인 : null
+email address 확인 : null
+Hibernate: 
+    insert 
+    into
+        member
+        (emaddress, email, id, name, passwd, sex) 
+    values
+        (?, ?, ?, ?, ?, ?)
+END: execution(Member HJproject.Hellospring.repository.JpamemberRepository.save(Member)) 23ms
+END: execution(Long HJproject.Hellospring.service.memberService.join(Member)) 54ms
+START : execution(Long HJproject.Hellospring.service.memberService.join(Member))
+START : execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String))
+Hibernate: 
+    select
+        member0_.code as code1_0_,
+        member0_.emaddress as emaddres2_0_,
+        member0_.email as email3_0_,
+        member0_.id as id4_0_,
+        member0_.name as name5_0_,
+        member0_.passwd as passwd6_0_,
+        member0_.sex as sex7_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+END: execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String)) 47ms
+END: execution(Long HJproject.Hellospring.service.memberService.join(Member)) 47ms
+2022-01-05 18:40:27.815  INFO 10388 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7f6936cc testClass = memberServiceIntegrationTest, testInstance = HJproject.Hellospring.service.memberServiceIntegrationTest@56bf6f1e, testMethod = 중복_아이디_체크@memberServiceIntegrationTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4ac26092 testClass = memberServiceIntegrationTest, locations = '{}', classes = '{class HJproject.Hellospring.HelloSpringApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3ad2e17, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@676cf48, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73194df, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a4621bd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48e92c5c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7690781], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-01-05 18:40:27.845  INFO 10388 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7f6936cc testClass = memberServiceIntegrationTest, testInstance = HJproject.Hellospring.service.memberServiceIntegrationTest@72155315, testMethod = 회원가입@memberServiceIntegrationTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4ac26092 testClass = memberServiceIntegrationTest, locations = '{}', classes = '{class HJproject.Hellospring.HelloSpringApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3ad2e17, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@676cf48, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73194df, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a4621bd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48e92c5c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7690781], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2484c868]; rollback [true]
+START : execution(Long HJproject.Hellospring.service.memberService.join(Member))
+START : execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String))
+Hibernate: 
+    select
+        member0_.code as code1_0_,
+        member0_.emaddress as emaddres2_0_,
+        member0_.email as email3_0_,
+        member0_.id as id4_0_,
+        member0_.name as name5_0_,
+        member0_.passwd as passwd6_0_,
+        member0_.sex as sex7_0_ 
+    from
+        member member0_ 
+    where
+        member0_.id=?
+END: execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findById(String)) 49ms
+START : execution(Member HJproject.Hellospring.repository.JpamemberRepository.save(Member))
+성별 저장 : man
+email 확인 : null
+email address 확인 : null
+Hibernate: 
+    insert 
+    into
+        member
+        (emaddress, email, id, name, passwd, sex) 
+    values
+        (?, ?, ?, ?, ?, ?)
+END: execution(Member HJproject.Hellospring.repository.JpamemberRepository.save(Member)) 41ms
+END: execution(Long HJproject.Hellospring.service.memberService.join(Member)) 90ms
+START : execution(Optional HJproject.Hellospring.service.memberService.findOne(Long))
+START : execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findByCode(Long))
+END: execution(Optional HJproject.Hellospring.repository.JpamemberRepository.findByCode(Long)) 0ms
+END: execution(Optional HJproject.Hellospring.service.memberService.findOne(Long)) 0ms
+46 통합테스트TEST 통합테스트TEST 통합테스트TEST man
+2022-01-05 18:40:28.020  INFO 10388 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7f6936cc testClass = memberServiceIntegrationTest, testInstance = HJproject.Hellospring.service.memberServiceIntegrationTest@72155315, testMethod = 회원가입@memberServiceIntegrationTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4ac26092 testClass = memberServiceIntegrationTest, locations = '{}', classes = '{class HJproject.Hellospring.HelloSpringApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3ad2e17, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@676cf48, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73194df, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a4621bd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48e92c5c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7690781], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
