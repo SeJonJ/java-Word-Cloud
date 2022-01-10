@@ -16,6 +16,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
+
   font-family: 'Noto Sans KR', sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -26,6 +27,16 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+
+.form input[name=first_name] {
+  display: inline-block;
+  width:46%;
+}
+
+.form input[type="radio"] {
+  width: 10%;
+}
+
 .form button {
   font-family: 'Noto Sans KR', sans-serif;
   text-transform: uppercase;
@@ -56,6 +67,7 @@
 .form .register-form {
   display: none;
 }
+
 .container {
   position: relative;
   z-index: 1;
@@ -95,4 +107,13 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+hr{
+  margin:0 auto 10px;
+  width: 80%;
+}
+
+p{
+  text-align: left;
 }
