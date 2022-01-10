@@ -68,16 +68,26 @@ class memberServiceIntegrationTest {
         member1.setName("spring");
         member1.setId("spring123");
         member1.setPasswd("4567");
+        member1.setSex("man");
+        member1.setEmail("spring");
+        member1.setEmaddress("hjproject.iptime.org");
+
+        LocalDate now = LocalDate.now();
+        member1.setRData(String.valueOf(now));
 
         Member member2 = new Member();
         member2.setName("자바");
         member2.setId("spring123");
         member2.setPasswd("1234");
+        member2.setSex("man");
+        member2.setEmail("spring");
+        member2.setEmaddress("hjproject.iptime.org");
+        member2.setRData(String.valueOf(now));
 
 
 
         /* 예외상황 확인 방법 2 */
-        memberService.join(member1);
+        memberService.join(member2);
 
         // when : 예외가 발생하는 상황은 동일한 아이디로 회원가입을 요청하는 경우
 
