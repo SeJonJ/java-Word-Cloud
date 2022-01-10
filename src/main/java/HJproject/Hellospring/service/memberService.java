@@ -25,7 +25,6 @@ public class memberService {
 
             memberRepository.save(member); // memberRepository 에 member 저장
             return member.getCode(); // 저장 후 저장된 회원의 Code 번호 반환
-
     }
 
     private void checkDuplicateID(Member member) { // 메서드 추출 단축키 컨트롤 + 쉬프트 + M

@@ -24,18 +24,18 @@ $(document).ready(function() {
     initializeSwiper();
 });
 
-function getGalleryData() {
-    $.ajax({
-        url: "/data/gallery.json"
-        , method: "GET"
-        , dataType: "json"
-        , success: function( data, textStatus, jqXHR ) {
-            console.log( data );
-        }, error : function( jqXHR, textStatus, errorThrown ) {
-            alert("어서오세요.");
-        }
-    })
-}
+//function getGalleryData() {
+//    $.ajax({
+//        url: "/data/gallery.json"
+//        , method: "GET"
+//        , dataType: "json"
+//        , success: function( data, textStatus, jqXHR ) {
+//            console.log( data );
+//        }, error : function( jqXHR, textStatus, errorThrown ) {
+//            alert("어서오세요.");
+//        }
+//    })
+//}
 
 function configuration() {
     $(window).resize( function() {

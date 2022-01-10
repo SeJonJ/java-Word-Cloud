@@ -16,15 +16,15 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="register-form">
+    <form class="register-form"  action="/members/new" method="post" >
       <p>1. 개인정보</p>
-      <input type="text" placeholder="이름"/>
+      <input type="text" name="name" placeholder="이름"/>
       <input name="email" type="text" id="email" placeholder="이메일"/>
       <a>@<a/>
         <input name="emaddress"  type="text" id="emaddress"/>
         <p>성별:
-          <input type="radio" name="man" value="man">남
-          <input type="radio" name="woman" value="woman">여
+          <input type="radio" name="sex" value="man">남
+          <input type="radio" name="sex" value="woman">여
         <p/>
         <hr>
         <p>2. 로그인 정보</p>

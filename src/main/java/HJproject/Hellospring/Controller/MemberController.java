@@ -50,8 +50,11 @@ public class MemberController {
 //        System.out.println("member : "+member.getPasswd());
 //        System.out.println("member : "+member.getId());
 
-
-        return "redirect:/"; // 회원가입이 끝나서 가입하기를 누르면 home(root page) 으로 설정된 페이지로 돌아감
+        if(member.getCode() != null){ // getCode 했을때 null 값이 아니라면, 즉 저장이 된 상태면
+            return "redirect:/"; // 회원가입이 끝나서 가입하기를 누르면 home(root page) 으로 설정된 페이지로 돌아감
+        }else{
+            return "members/newregisters"; // 저장이 안되었으면 회원가입 페이지로
+        }
     }
 
     @GetMapping("/members/member_List") // members 페이지에 대해 Get 으로 넘어올 때 -> 주로 값을 불러오는 하는 경우
@@ -62,4 +65,5 @@ public class MemberController {
 
         return "members/members_List"; // return 시에는 앞에  " / " 가 없어야함
     }
+
 }

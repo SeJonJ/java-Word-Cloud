@@ -13,9 +13,9 @@ public class HomeController {
         return "newspringhome"; // springhome.html 을 찾아서 연다.
     }
 
-    @GetMapping("/login") // 로그인 페이지 get 메소드로 받으면
+    @GetMapping("login") // 로그인 페이지 get 메소드로 받으면
     public String login(){
-        return "login"; // login.html 을 찾아서 연다
+        return "members/login"; // login.html 을 찾아서 연다
     }
 
 }
