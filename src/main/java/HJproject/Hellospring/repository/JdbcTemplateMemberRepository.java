@@ -113,6 +113,16 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
     }
 
     @Override
+    public Optional<Member> findByEmaddress(String emaddress) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Member> findByRData(String RData) {
+        return Optional.empty();
+    }
+
+    @Override
     public List<Member> findAll() {
         return jdbcTemplate.query("select * from member", memberRowMapper());
     }

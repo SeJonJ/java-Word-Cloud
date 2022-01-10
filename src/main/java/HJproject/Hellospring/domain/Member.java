@@ -1,5 +1,7 @@
 package HJproject.Hellospring.domain;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 
 @Entity
@@ -31,6 +33,9 @@ public class Member {
 
     @Column(name = "emaddress")
     private String emaddress;
+
+    @Column(name = "Register_data")
+    private String RData;
 
 
 
@@ -88,5 +93,13 @@ public class Member {
 
     public void setEmaddress(String emaddress) {
         this.emaddress = emaddress;
+    }
+
+    public String getRData() {
+        return RData;
+    }
+
+    public void setRData(String RData) {
+        this.RData = RData;
     }
 }

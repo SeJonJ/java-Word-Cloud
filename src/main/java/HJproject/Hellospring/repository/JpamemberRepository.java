@@ -23,9 +23,8 @@ public class JpamemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-        System.out.println("성별 저장 : " + member.getSex());
-        System.out.println("email 확인 : "+ member.getEmail());
-        System.out.println("email address 확인 : "+ member.getEmaddress());
+
+        System.out.println("########### 회원 가입 완료 ###########");
 
         em.persist(member); // persist 는 영속화 즉, member 를 저장한다는 의미 => SQL 따위 필요없다
         return member;
@@ -90,9 +89,22 @@ public class JpamemberRepository implements MemberRepository{
     }
 
     @Override
+    public Optional<Member> findByEmaddress(String emaddress) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Member> findByRData(String RData) {
+        return Optional.empty();
+    }
+
+
+    @Override
     public List<Member> findAll() {
         List<Member> result = em.createQuery("select m from Member m ", Member.class)
                 .getResultList();
         return result;
     }
+
+
 }

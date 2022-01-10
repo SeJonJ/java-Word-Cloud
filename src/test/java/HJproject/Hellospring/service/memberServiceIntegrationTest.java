@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
+import java.time.LocalDate;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -35,6 +37,11 @@ class memberServiceIntegrationTest {
         member.setId("통합테스트TEST");
         member.setPasswd("통합테스트TEST");
         member.setSex("man");
+        member.setEmail("통합테스트TEST");
+        member.setEmaddress("hjproject.iptime.org");
+
+        LocalDate now = LocalDate.now();
+        member.setRData(String.valueOf(now));
 
         // when : 검증하고자 하는 코드드
        Long saveCode = memberService.join(member);
@@ -48,7 +55,8 @@ class memberServiceIntegrationTest {
         // 내가 작성한 값과 실제 저장된 값 비교 -> member.getId : findCode.getId
 
         System.out.println(findCode.getCode()+ " " +findCode.getName() + " "+ findCode.getId()+ " "+findCode.getPasswd() + " " + findCode.getSex());
-
+        System.out.println(findCode.getEmail()+"@"+findCode.getEmaddress());
+        System.out.println(findCode.getRData());
 
     }
 

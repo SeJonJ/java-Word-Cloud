@@ -27,3 +27,7 @@ CREATE TABLE member
 3. ALTER TABLE member ADD sex VARCHAR(100) NULL;
    ALTER TABLE member ADD email VARCHAR(100) NULL;
    ALTER TABLE member ADD emaddress VARCHAR(100) NULL;
+
+4. ALTER TABLE `member` ADD COLUMN `Register_data` DATE NULL AFTER `emaddress`;
+
+5. ALTER TABLE `member` CHANGE COLUMN `Register_data` `Register_data` DATE NOT NULL DEFAULT now() AFTER `emaddress`;

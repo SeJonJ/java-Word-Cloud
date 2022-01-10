@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -37,6 +38,10 @@ public class MemberController {
         member.setSex(form.getSex());
         member.setEmail(form.getEmail());
         member.setEmaddress(form.getEmaddress());
+
+        // 회원 가입 시 회원 가입 날짜 저장하기 위한 내용
+        LocalDate now = LocalDate.now(); // 현재 시간을 now 라는 객체로
+        member.setRData(String.valueOf(now)); // now 를 string으로 바꿔서 RData에 저장
 
         memberService.join(member);
         //member service 를 사용해 member 객체에 대해 join 메서드를 실행한다.
