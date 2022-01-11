@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Flat HTML5/CSS3 Login Form</title>
+  <title>HJProject Login</title>
   <link rel="stylesheet" href="/css/login_style.css">
 
 </head>
@@ -39,9 +39,9 @@
     </form>
 
 
-    <form class="login-form">
-      <input type="text" placeholder="아이디"/>
-      <input type="password" placeholder="비밀번호"/>
+    <form class="login-form" action="/login" method="post" >
+      <input type="text" name="loginid" placeholder="아이디"/>
+      <input type="password" name="loginpw" placeholder="비밀번호"/>
       <button>로그인</button>
       <p class="message">아이디가 없다면? <a href="#">회원가입</a></p>
     </form>

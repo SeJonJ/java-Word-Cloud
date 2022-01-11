@@ -15,7 +15,6 @@ public class MyWebTest {
     @Autowired MemberRepository memberRepository;
 
 
-    @Test
     void member_Test(){
         Member member = new Member();
 
