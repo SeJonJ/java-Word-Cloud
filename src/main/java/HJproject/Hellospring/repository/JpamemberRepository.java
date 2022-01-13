@@ -1,11 +1,9 @@
 package HJproject.Hellospring.repository;
 
-import HJproject.Hellospring.domain.Member;
-import org.hibernate.annotations.common.reflection.XMember;
+import HJproject.Hellospring.domain.member.Member;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 

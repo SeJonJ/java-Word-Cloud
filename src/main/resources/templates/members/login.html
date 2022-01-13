@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>HJProject Login</title>
@@ -19,10 +20,38 @@
     <form class="register-form"  action="/members/new" method="post" >
       <p>1. 개인정보</p>
       <input type="text" name="name" placeholder="이름"/>
-      <input name="email" type="text" id="email" placeholder="이메일"/>
-      <a>@<a/>
-        <input name="emaddress"  type="text" id="emaddress"/>
-        <p>성별:
+      <input name="email" type="text" id="email" placeholder="이메일"/>&#64;<input name="emaddress"  type="text" id="emaddress" ReadOnly="true"/>
+      <select id="emailselect" onchange="SetEmailTail(emailselect.options[this.selectedIndex].value)" >
+        <option value="notSelected">::선택하세요::</option>
+        <option value="etc" id="etc">직접입력</option>
+        <option value="naver.com">naver.com</option>
+        <option value="nate.com">nate.com</option>
+        <option value="google.com">google.com</option>
+        <!--이메일 확인 스크립트-->
+
+        <script th:inline="javascript">
+								function SetEmailTail(emailValue) {
+    								var email = document.all("email")    // 사용자 입력
+    								var emailTail = document.all("emaddress") // Select box
+									var esw = $("#etc1");
+   	 								if ( emailValue == "notSelected" ){
+										emailTail.readOnly = true;
+										emailTail.value = '';
+										alert("이메일을 선택or입력하세요  ");
+									}
+    								else if ( emailValue == "etc" ) {
+    									emailTail.readOnly = false;
+    									emailTail.value = "";
+										emailTail.focus();
+									}
+									else {
+    									emailTail.readOnly = true;
+    									emailTail.value = emailValue;
+									}
+								}
+        </script>
+      </select>
+      <p>성별:
           <input type="radio" name="sex" value="man">남
           <input type="radio" name="sex" value="woman">여
         <p/>
@@ -40,8 +69,10 @@
 
 
     <form class="login-form" action="/login" method="post" >
+
       <input type="text" name="loginid" placeholder="아이디"/>
       <input type="password" name="loginpw" placeholder="비밀번호"/>
+
       <button>로그인</button>
       <p class="message">아이디가 없다면? <a href="#">회원가입</a></p>
     </form>

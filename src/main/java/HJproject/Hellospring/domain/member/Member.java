@@ -1,4 +1,4 @@
-package HJproject.Hellospring.domain;
+package HJproject.Hellospring.domain.member;
 
 import org.springframework.data.annotation.CreatedDate;
 

@@ -1,4 +1,4 @@
-package HJproject.Hellospring.domain.Practice;
+package HJproject.Hellospring.Practice;
 
 public class Morning {
     private Cafe_A cafe_a;

@@ -1,4 +1,4 @@
-package HJproject.Hellospring.login;
+package HJproject.Hellospring.domain.login;
 
 import lombok.Data;
 

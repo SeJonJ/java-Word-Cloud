@@ -1,6 +1,6 @@
 package HJproject.Hellospring.Controller;
 
-import HJproject.Hellospring.domain.Member;
+import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.service.memberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

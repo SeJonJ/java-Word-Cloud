@@ -1,8 +1,8 @@
 package HJproject.Hellospring.Controller;
 
-import HJproject.Hellospring.domain.Member;
-import HJproject.Hellospring.login.LoginForm;
-import HJproject.Hellospring.login.LoginService;
+import HJproject.Hellospring.domain.member.Member;
+import HJproject.Hellospring.domain.login.LoginForm;
+import HJproject.Hellospring.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

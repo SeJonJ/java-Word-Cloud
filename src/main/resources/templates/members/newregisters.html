@@ -29,7 +29,40 @@
             <input type="name" class="form-control" name="name" placeholder="이름" required="required">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="이메일 주소" required="required">
+            <input name="email" type="text" id="email" placeholder="이메일"/>&#64;<input name="emaddress"  type="text" id="emaddress" ReadOnly="true"/>
+            <select id="emailselect" onchange="SetEmailTail(emailselect.options[this.selectedIndex].value)" >
+                <option value="notSelected">::선택하세요::</option>
+                <option value="etc" id="etc">직접입력</option>
+                <option value="naver.com">naver.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="google.com">google.com</option>
+                <!--이메일 확인 스크립트-->
+                <script th:inline="javascript">
+								function SetEmailTail(emailValue) {
+    								var email = document.all("email")    // 사용자 입력
+    								var emailTail = document.all("emaddress") // Select box
+									var esw = $("#etc1");
+   	 								if ( emailValue == "notSelected" ){
+										emailTail.readOnly = true;
+										emailTail.value = '';
+										alert("이메일을 선택or입력하세요  ");
+									}
+    								else if ( emailValue == "etc" ) {
+    									emailTail.readOnly = false;
+    									emailTail.value = "";
+										emailTail.focus();
+									}
+									else {
+    									emailTail.readOnly = true;
+    									emailTail.value = emailValue;
+									}
+								}
+                </script>
+            </select>
+            <p>성별:
+                <input type="radio" name="sex" value="man">남
+                <input type="radio" name="sex" value="woman">여
+            <p/>
             <hr style="width:90%;height:1px;border:none;background-color:#C3C3C3;">
             <p class="hint-text">로그인 정보</p>
         </div>

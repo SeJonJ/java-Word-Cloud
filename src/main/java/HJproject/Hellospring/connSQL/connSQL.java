@@ -1,8 +1,7 @@
 package HJproject.Hellospring.connSQL;
 
 
-import HJproject.Hellospring.domain.Member;
-import org.hibernate.annotations.common.reflection.XMember;
+import HJproject.Hellospring.domain.member.Member;
 
 import java.sql.*;
 import java.util.ArrayList;

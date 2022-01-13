@@ -1,6 +1,6 @@
-package HJproject.Hellospring.login;
+package HJproject.Hellospring.service;
 
-import HJproject.Hellospring.domain.Member;
+import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

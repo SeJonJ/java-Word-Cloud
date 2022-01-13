@@ -1,4 +1,4 @@
-package HJproject.Hellospring.domain.Practice;
+package HJproject.Hellospring.Practice;
 
 
 import java.text.DateFormat;
