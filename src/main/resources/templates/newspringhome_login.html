@@ -116,9 +116,17 @@
             <p class="mt30"></p>
 
             <!--로그인 하는 경로 : 로그인 회원가입 회원 리스트 확인 --->
-            <a href="/login" class="mt50">로그인 하기</a>
-            <a href="/members/newregisters" class="mt50">회원가입 하기</a>
+            <h4 class="mb-3" th:text="|${member.name} 님 환영합니다 |"></h4>
+
+            <a href="#" class="mt50">회원 정보 수정</a>
+            <a href="/members/member_List" class="mt50">회원 리스트 확인</a>
+<!--            <a th:href="@{/logout}" methods="post" class="mt50">로그아웃</a>-->
+
+            <form action="/logout" method="post">
+                <button class="logout" type="button"> 로그아웃</button>
+            </form>
         </div>
+
     </header>
     <div class="contents-wrap">
     <section id="feature" class="container update-box"> <!-- Game Updates Start -->
