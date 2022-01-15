@@ -11,7 +11,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class LoginService {
 
-
     private final MemberRepository memberRepository;
 
 
@@ -24,7 +23,6 @@ public class LoginService {
         // 여기서 findbyid 메서드를 사용하여 Optional 로 감싸진 member 객체에 해당 아이디 기준의 DB 정보를 저장함 => code, passwd , sex , email 등등
         Optional<Member> findMemberOptional = memberRepository.findById(loginid);
         Member member = findMemberOptional.get(); // Optional 로 감싸졌을때는 get 으로 꺼내올 수 있음
-
 
 
         if (member.getPasswd().equals(loginpw)) { // 꺼내온 passwd 가 내가 입력한 패스워드 loginpw 와 같다면

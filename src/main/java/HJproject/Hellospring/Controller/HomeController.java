@@ -20,6 +20,7 @@ import java.util.Optional;
 public class HomeController {
 
     private final MemberRepository memberRepository;
+
 //    @GetMapping("/") // 가장 기본 페이지 의미, 즉 루트 페이지 위치
 //    public String home(){
 //        return "newspringhome"; // springhome.html 을 찾아서 연다.

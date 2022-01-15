@@ -15,9 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
 @Controller
-@RequiredArgsConstructor
-public class LoginComtroller {
-
+@RequiredArgsConstructor // 클래스의 final 필드에 대한 생성자를 자동으로 생성
+public class LoginController {
 
     private final LoginService loginService;
 
@@ -31,7 +30,6 @@ public class LoginComtroller {
     public String login(@ModelAttribute LoginForm form, BindingResult bindingResult, HttpServletResponse httpServletResponse) {
         if (bindingResult.hasErrors()) {
             return "members/login";
-
         }
 
         // loginForm 을 통해 값들을 가져옴

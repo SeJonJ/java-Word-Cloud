@@ -1,6 +1,5 @@
 package HJproject.Hellospring;
 
-import HJproject.Hellospring.Aop.TimeTraceAop;
 import HJproject.Hellospring.repository.*;
 import HJproject.Hellospring.service.memberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 
 @Configuration // 스프링 빈에 등록하기 위한 설정파일이라는 Annotation
 public class SpringConfig {
