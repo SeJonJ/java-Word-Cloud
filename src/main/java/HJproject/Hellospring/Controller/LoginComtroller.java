@@ -34,6 +34,7 @@ public class LoginComtroller {
 
         }
 
+        // loginForm 을 통해 값들을 가져옴
         Member LoginMember = loginService.login(form.getLoginid(), form.getLoginpw());
 
         if (LoginMember == null) { // login 메서드에서 던져주는 값이 null 이면 로그인 실패

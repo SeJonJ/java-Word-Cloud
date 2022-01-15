@@ -44,11 +44,17 @@ public class HomeController {
         if(loginMember.get().getCode() == null){
             System.out.println("getCode : "+ loginMember.get().getCode());
             return "newspringhome";
-        }
 
-        model.addAttribute("member", loginMember.get());
-        System.out.println("로그인 성공");
-        return "newspringhome_login";
+        }else if(loginMember.get().getCode() == 0){
+            model.addAttribute("member", loginMember.get());
+            System.out.println("관리자 로그인 성공");
+            return "newspringhome_admin";
+
+        }else {
+            model.addAttribute("member", loginMember.get());
+            System.out.println("로그인 성공");
+            return "newspringhome_login";
+        }
     }
 
 

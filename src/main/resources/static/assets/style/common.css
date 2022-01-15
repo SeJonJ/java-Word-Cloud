@@ -1153,22 +1153,91 @@ footer p {
     }
 }
 
-button {
+/* 내가 수정한 것 -> 보류
+button.logout {
      margin: 50px;
+     display: block;
+     border: 2px solid rgb(238, 122, 54);
+     border-radius: 10px;
+     padding: 15px;
+     font-size: 20px;
+     font-weight: bold;
+     color: rgb(238, 122, 54);
+     background: #FFF;
+     box-shadow: 0px 8px 3px 3px #111;
+     transform: translate(0, 0);
+     transition: all 0.2s;
+
+     cursor: pointer;
+}*/
+
+ .logout {
+  margin: 50px;
+  background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
-
-.logout{
-   display: block;
-    border: 2px solid rgb(238, 122, 54);
-    border-radius: 10px;
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(238, 122, 54);
-    background: #FFF;
-
-    box-shadow: 0px 8px 3px 3px #111;
-    transform: translate(0, 0);
-
-    transition: all 0.2s;
+.logout span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.logout:before,
+.logout:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.logout:before {
+  height: 0%;
+  width: 2px;
+}
+.logout:after {
+  width: 0%;
+  height: 2px;
+}
+.logout:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.logout:hover:before {
+  height: 100%;
+}
+.logout:hover:after {
+  width: 100%;
+}
+.logout span:hover{
+   color: rgba(2,126,251,1);
+}
+.logout span:before,
+.logout span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.logout span:before {
+  width: 2px;
+  height: 0%;
+}
+.logout span:after {
+  width: 0%;
+  height: 2px;
+}
+.logout span:hover:before {
+  height: 100%;
+}
+.logout span:hover:after {
+  width: 100%;
 }
