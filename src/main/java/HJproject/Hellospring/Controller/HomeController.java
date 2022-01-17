@@ -1,6 +1,7 @@
 package HJproject.Hellospring.Controller;
 
 
+import HJproject.Hellospring.Session.SessionManager;
 import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
@@ -20,13 +22,14 @@ import java.util.Optional;
 public class HomeController {
 
     private final MemberRepository memberRepository;
+    private final SessionManager sessionManager;
 
 //    @GetMapping("/") // 가장 기본 페이지 의미, 즉 루트 페이지 위치
 //    public String home(){
 //        return "newspringhome"; // springhome.html 을 찾아서 연다.
 //    }
 
-    @GetMapping("/")
+//    @GetMapping("/") : 쿠키를 활용한 로그인 홈페이지 정의
     // @CookieValue 를 통해서 쿠키값을 가져올 수 있다.
     // required = true 의 경우 쿠키값이 없으면 접속 불가능, false 는 없어도 접근 가능
     public String LoginHome(@CookieValue(name = "memberCode", required = false) Long memberCode, Model model) {
@@ -58,14 +61,42 @@ public class HomeController {
         }
     }
 
+    @GetMapping("/")
+    public String LoginHomeWithSession(HttpServletRequest request, Model model) {
+
+        // 세션 관리자를 통한 회원 정보 확인 : Object 임으로 Member 라는 객체로 캐스팅 필요
+        Member member = (Member) sessionManager.getSession(request);
+
+        // 로그인 안했을 시
+        if(member == null){
+            System.out.println("memberCode : "+member);
+            return "newspringhome";
+        }
+
+        /* 로그인 시도 시 */
+        System.out.println("회원 코드 확인 : " + member.getCode());
+        Cookie cookie = sessionManager.findCookie(request, SessionManager.SESSION_COOKIE_NAME);
+
+        // 각각 로그인을 시도했으나 회원 코드가 없는 경우, 회원코드가 0 인 경우, 회원 코드가 0 이 아닌 경우
+        if(member.getCode() == null){
+            System.out.println("쿠키 : "+cookie.getValue());
+            return "newspringhome";
+
+        }else if(member.getCode() == 0){
+            model.addAttribute("member", member);
+            System.out.println("관리자 로그인 성공");
+            System.out.println("쿠키 : "+cookie.getValue());
+
+            return "newspringhome_admin";
+
+        }else {
+            model.addAttribute("member", member);
+            System.out.println("일반 회원 로그인 성공");
+            System.out.println("쿠키 : "+cookie.getValue());
+            return "newspringhome_login";
+        }
 
 
-    @PostMapping("/logout")
-    // 쿠키를 삭제하려면 쉽게 그냥 쿠키 생명주기, 시간을 0으로 만들어 버리면 됨
-    public String logout(HttpServletResponse httpServletResponse){
-        Cookie cookie = new Cookie("memberCode", null);
-        cookie.setMaxAge(0);
-        httpServletResponse.addCookie(cookie);
-        return "redirect:/";
     }
+
 }

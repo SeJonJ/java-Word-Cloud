@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 public class LoginForm {
 
     // notNull 어노테이션은 해당 값이 꼭 있어야함함
-
    @NotNull
     private String loginid;
 

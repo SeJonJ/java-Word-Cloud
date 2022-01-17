@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 // 현재는 @Component 사용
 public class TimeTraceAop {
 
-    @Around("execution(* HJproject.Hellospring..*(..))") // AOP를 적용할 클래스들을 정하는(타게팅하는) 어노테이션
+    //@Around("execution(* HJproject.Hellospring..*(..))") // AOP를 적용할 클래스들을 정하는(타게팅하는) 어노테이션
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable{
 
         long start = System.currentTimeMillis();

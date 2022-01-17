@@ -9,6 +9,8 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+// 이 어노테이션이 붙어있으면 초기화되지 않은 final 필드나 @nonNull 이 붙은 필드에 대해서
+// 생성자를 생성해줌 => 즉 알아서 DI를 해줌
 public class LoginService {
 
     private final MemberRepository memberRepository;
