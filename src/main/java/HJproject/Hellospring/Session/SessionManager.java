@@ -1,12 +1,10 @@
 package HJproject.Hellospring.Session;
 
-import org.hibernate.sql.OracleJoinFragment;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.CollationKey;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
