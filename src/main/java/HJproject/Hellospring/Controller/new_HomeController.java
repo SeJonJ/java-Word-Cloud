@@ -85,10 +85,6 @@ public class new_HomeController {
             model.addAttribute("member", loginMember);
             System.out.println("관리자 로그인 성공");
 
-            /** 이런식으로 session에 담아져있는 값을 가져올 수 있음 */
-
-            /** 이런식으로 세션 토큰 값을 가져올 수 있음 **/
-
             return "newspringhome_admin";
 
         }else {

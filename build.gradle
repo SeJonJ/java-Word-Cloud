@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'HJproject'
-version = '0.0.7-SNAPSHOT'
+version = '0.0.8-SNAPSHOT'
 // JDK 버전 설정
 sourceCompatibility = '11'
 
