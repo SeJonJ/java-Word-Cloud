@@ -6,7 +6,7 @@ public class MemberForm {
     private String userpw; // 고객 passwd
 
     /* 6. 내 맘대로 구현하기 step 2 */
-    private String sex;
+    private String gender;
     private String email;
     private String emaddress;
 
@@ -34,12 +34,12 @@ public class MemberForm {
         this.userpw = userpw;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {

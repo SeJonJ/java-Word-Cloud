@@ -17,17 +17,17 @@ public class MyWebTest {
     void member_Test(){
         Member member = new Member();
 
-        member.setName("test2");
-        member.setName("test2");
-        member.setId("test2");
-        member.setPasswd("test2");
+        member.setMNAME("test2");
+        member.setMNAME("test2");
+        member.setMID("test2");
+        member.setMPASSWD("test2");
 
         Long saveCode = memberService.join(member);
 
 
-        Member findCode = memberService.findOne(member.getCode()).get();
+        Member findCode = memberService.findOne(member.getMEMBERCODE()).get();
 
-        System.out.println(findCode.getCode()+ " " +findCode.getName() + " "+ findCode.getId()+ " "+findCode.getPasswd());
+        System.out.println(findCode.getMEMBERCODE()+ " " +findCode.getMNAME() + " "+ findCode.getMID()+ " "+findCode.getMPASSWD());
 
     }
 }

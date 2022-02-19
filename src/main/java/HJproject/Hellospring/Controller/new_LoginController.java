@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Slf4j
@@ -56,7 +54,7 @@ public class new_LoginController {
         session.setAttribute(SessionConst.LOGIN_MEMBER, LoginMember);
 
         /** 이렇게 세션에 별도의 다른 값을 넣어 둘 수 있음 **/
-        session.setAttribute("memberCode", LoginMember.getCode());
+        session.setAttribute("memberCode", LoginMember.getMEMBERCODE());
         return "redirect:/";
     }
 

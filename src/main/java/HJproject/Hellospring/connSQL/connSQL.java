@@ -14,7 +14,7 @@ public class connSQL {
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String SQL = "select * from member";
+        String SQL = "select * from Member";
 
         try {
             System.out.println("연결중1");
@@ -37,15 +37,15 @@ public class connSQL {
             while(rs.next()){
                 Member member = new Member();
 
-                member.setCode(rs.getLong("CODE"));
-                member.setName(rs.getString("NAME"));
+                member.setMEMBERCODE(rs.getLong("MEMBER_CODE"));
+                member.setMNAME(rs.getString("MNAME"));
                 list.add(member);
 
             }
 
             for(int i=0; i<list.size(); i++){
-                System.out.println("CODE : "+ list.get(i).getCode());
-                System.out.println("name : "+ list.get(i).getName());
+                System.out.println("CODE : "+ list.get(i).getMEMBERCODE());
+                System.out.println("name : "+ list.get(i).getMNAME());
 
             }
 

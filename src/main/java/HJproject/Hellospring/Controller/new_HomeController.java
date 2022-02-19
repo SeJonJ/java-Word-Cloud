@@ -2,21 +2,16 @@ package HJproject.Hellospring.Controller;
 
 
 import HJproject.Hellospring.Session.SessionConst;
-import HJproject.Hellospring.Session.SessionManager;
 import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Optional;
 
 
 @Controller
@@ -37,12 +32,12 @@ public class new_HomeController {
         /* 로그인 시도 시 */
         Member loginMember = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
 
-        if(loginMember.getCode() == null){
+        if(loginMember.getMEMBERCODE() == null){
 
             // 각각 로그인을 시도했으나 회원 코드가 없는 경우, 회원코드가 0 인 경우, 회원 코드가 0 이 아닌 경우
             return "newspringhome";
 
-        }else if(loginMember.getCode() == 0){
+        }else if(loginMember.getMEMBERCODE() == 0){
             session.getAttribute(session.getId());
             model.addAttribute("member", loginMember);
             System.out.println("관리자 로그인 성공");
@@ -80,7 +75,7 @@ public class new_HomeController {
 
             return "newspringhome";
 
-        }else if(loginMember.getCode() == 0){
+        }else if(loginMember.getMEMBERCODE() == 0){
 
             model.addAttribute("member", loginMember);
             System.out.println("관리자 로그인 성공");

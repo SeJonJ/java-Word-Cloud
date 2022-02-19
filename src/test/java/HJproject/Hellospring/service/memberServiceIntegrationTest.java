@@ -30,32 +30,32 @@ class memberServiceIntegrationTest {
 
         // given : 주어지는 데이터
         Member member = new Member();
-        member.setName("통합테스트TEST");
+        member.setMNAME("통합테스트TEST");
 
         /*  내 맘대로 구현하기   */
-        member.setId("통합테스트TEST");
-        member.setPasswd("통합테스트TEST");
-        member.setSex("man");
-        member.setEmail("통합테스트TEST");
-        member.setEmaddress("hjproject.iptime.org");
+        member.setMID("통합테스트TEST");
+        member.setMPASSWD("통합테스트TEST");
+        member.setMGENDER("man");
+        member.setMEMAIL("통합테스트TEST");
+        member.setMEMADDRESS("hjproject.iptime.org");
 
         LocalDate now = LocalDate.now();
-        member.setRData(String.valueOf(now));
+        member.setRDate(String.valueOf(now));
 
         // when : 검증하고자 하는 코드드
        Long saveCode = memberService.join(member);
 
 
         // then : 예상 결과(기댓값)
-        Member findCode = memberService.findOne(member.getCode()).get();
+        Member findCode = memberService.findOne(member.getMEMBERCODE()).get();
         // findOne 메서드를 사용해 memberCode 가져오기
 
-        assertThat(member.getId()).isEqualTo(findCode.getId());
+        assertThat(member.getMID()).isEqualTo(findCode.getMID());
         // 내가 작성한 값과 실제 저장된 값 비교 -> member.getId : findCode.getId
 
-        System.out.println(findCode.getCode()+ " " +findCode.getName() + " "+ findCode.getId()+ " "+findCode.getPasswd() + " " + findCode.getSex());
-        System.out.println(findCode.getEmail()+"@"+findCode.getEmaddress());
-        System.out.println(findCode.getRData());
+        System.out.println(findCode.getMEMBERCODE()+ " " +findCode.getMNAME() + " "+ findCode.getMID()+ " "+findCode.getMPASSWD() + " " + findCode.getMGENDER());
+        System.out.println(findCode.getMEMAIL()+"@"+findCode.getMEMADDRESS());
+        System.out.println(findCode.getRDate());
 
     }
 
@@ -64,24 +64,24 @@ class memberServiceIntegrationTest {
 
         //given
         Member member1 = new Member();
-        member1.setName("spring");
-        member1.setId("spring123");
-        member1.setPasswd("4567");
-        member1.setSex("man");
-        member1.setEmail("spring");
-        member1.setEmaddress("hjproject.iptime.org");
+        member1.setMNAME("spring");
+        member1.setMID("spring123");
+        member1.setMPASSWD("4567");
+        member1.setMGENDER("man");
+        member1.setMEMAIL("spring");
+        member1.setMEMADDRESS("hjproject.iptime.org");
 
         LocalDate now = LocalDate.now();
-        member1.setRData(String.valueOf(now));
+        member1.setRDate(String.valueOf(now));
 
         Member member2 = new Member();
-        member2.setName("자바");
-        member2.setId("spring123");
-        member2.setPasswd("1234");
-        member2.setSex("man");
-        member2.setEmail("spring");
-        member2.setEmaddress("hjproject.iptime.org");
-        member2.setRData(String.valueOf(now));
+        member2.setMNAME("자바");
+        member2.setMID("spring123");
+        member2.setMPASSWD("1234");
+        member2.setMGENDER("man");
+        member2.setMEMAIL("spring");
+        member2.setMEMADDRESS("hjproject.iptime.org");
+        member2.setRDate(String.valueOf(now));
 
 
 

@@ -24,12 +24,12 @@ public class memberService {
             checkDuplicateID(member); // 중복 회원 검증
 
             memberRepository.save(member); // memberRepository 에 member 저장
-            return member.getCode(); // 저장 후 저장된 회원의 Code 번호 반환
+            return member.getMEMBERCODE(); // 저장 후 저장된 회원의 Code 번호 반환
     }
 
     private void checkDuplicateID(Member member) { // 메서드 추출 단축키 컨트롤 + 쉬프트 + M
 
-            memberRepository.findById(member.getId())
+            memberRepository.findById(member.getMID())
                     .ifPresent(m -> {
                         throw new IllegalStateException("이미 존재하는 ID 입니다");
                     });
@@ -41,6 +41,6 @@ public class memberService {
     }
 
     public Optional<Member> findOne(Long memberCode){
-        return memberRepository.findByCode(memberCode);
+        return memberRepository.findBycode(memberCode);
     }
 }

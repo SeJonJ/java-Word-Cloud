@@ -1,105 +1,107 @@
 package HJproject.Hellospring.domain.member;
 
-import org.springframework.data.annotation.CreatedDate;
-
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "MEMBER")
+//@Table(name = "MEMBER") // TABLE 어노테이션 사용해서 테이블 이름을 지정 가능
 public class Member {
 
     // @Id : DB 에서 primary key 로 설정된 컬럼 맵핑
     // @GeneratedValue : pk 값의 생성 방식 -> 현재는 DB 에서 자동 생성임으로 이에 해당하는 Identity
+    // springdataJPA 에서는 _ 가 예약어로 되어있어서 사용이 불가능하단다ㅋㅋㅋㅋ => 컬럼명에서는 _ 가능
+    // 만약 그래도 쓸꺼면 아래처럼 column 해서 컬럼명을 정해주고 변수명만 바꾸자
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long code; // 시스템에서 저장 & 식별 구분 하기 위한 code
+    @Column(name = "MEMBER_CODE")
+    private Long MEMBERCODE; // 시스템에서 저장 & 식별 구분 하기 위한 code => primary key
 
     // @Column : 컬럼명 코드 변수 매핑 -> name = "컬럼명"
-    @Column(name = "name")
-    private String name; // 고객 이름
+    @Column(name = "MNAME")
+    private String MNAME; // 고객 이름
 
 
-    @Column(name = "id")
-    private String id; // 고객 id
+    @Column(name = "MID")
+    private String MID; // 고객 id
 
-    @Column(name = "passwd")
-    private String passwd; // 고객 passwd
+    @Column(name = "MPASSWD")
+    private String MPASSWD; // 고객 passwd
 
 /* 6. 내 마음대로 구현하기 step 2 */
 
-    @Column(name = "sex")
-    private String sex;
+    @Column(name = "MGENDER")
+    private String MGENDER;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "MEMAIL")
+    private String MEMAIL;
 
-    @Column(name = "emaddress")
-    private String emaddress;
+    @Column(name = "MEMADDRESS")
+    private String MEMADDRESS;
 
-    @Column(name = "Register_data")
-    private String RData;
+    @Column(name = "MRDATE")
+    private String RDate;
 
 
 
-    public Long getCode() {
-        return code;
+    public Long getMEMBERCODE() {
+        return MEMBERCODE;
     }
 
-    public void setCode(Long code) {
-        this.code = code;
+    public void setMEMBERCODE(Long MEMBERCODE) {
+        this.MEMBERCODE = MEMBERCODE;
     }
 
-    public String getName() {
-        return name;
+    public String getMNAME() {
+        return MNAME;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMNAME(String MNAME) {
+        this.MNAME = MNAME;
     }
 
-    public String getId() {
-        return id;
+    public String getMID() {
+        return MID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMID(String MID) {
+        this.MID = MID;
     }
 
-    public String getPasswd() {
-        return passwd;
+    public String getMPASSWD() {
+        return MPASSWD;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    public void setMPASSWD(String MPASSWD) {
+        this.MPASSWD = MPASSWD;
     }
 
-    public String getSex() {
-        return sex;
+    public String getMGENDER() {
+        return MGENDER;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setMGENDER(String MGENDER) {
+        this.MGENDER = MGENDER;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMEMAIL() {
+        return MEMAIL;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMEMAIL(String MEMAIL) {
+        this.MEMAIL = MEMAIL;
     }
 
-    public String getEmaddress() {
-        return emaddress;
+    public String getMEMADDRESS() {
+        return MEMADDRESS;
     }
 
-    public void setEmaddress(String emaddress) {
-        this.emaddress = emaddress;
+    public void setMEMADDRESS(String MEMADDRESS) {
+        this.MEMADDRESS = MEMADDRESS;
     }
 
-    public String getRData() {
-        return RData;
+    public String getRDate() {
+        return RDate;
     }
 
-    public void setRData(String RData) {
-        this.RData = RData;
+    public void setRDate(String RDate) {
+        this.RDate = RDate;
     }
 }

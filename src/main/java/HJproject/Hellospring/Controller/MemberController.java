@@ -4,7 +4,6 @@ import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.domain.member.MemberForm;
 import HJproject.Hellospring.repository.MemberRepository;
 import HJproject.Hellospring.service.memberService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class MemberController {
@@ -47,16 +45,16 @@ public class MemberController {
     public String create(MemberForm form){
         try {
             Member member = new Member(); // member 객체 생성
-            member.setName(form.getName()); // member name 에 form 에서 받아온 name 을 넣어준다
-            member.setId(form.getUserid());
-            member.setPasswd(form.getUserpw());
-            member.setSex(form.getSex());
-            member.setEmail(form.getEmail());
-            member.setEmaddress(form.getEmaddress());
+            member.setMNAME(form.getName()); // member name 에 form 에서 받아온 name 을 넣어준다
+            member.setMID(form.getUserid());
+            member.setMPASSWD(form.getUserpw());
+            member.setMGENDER(form.getGender());
+            member.setMEMAIL(form.getEmail());
+            member.setMEMADDRESS(form.getEmaddress());
 
             // 회원 가입 시 회원 가입 날짜 저장하기 위한 내용
             LocalDate now = LocalDate.now(); // 현재 시간을 now 라는 객체로
-            member.setRData(String.valueOf(now)); // now 를 string으로 바꿔서 RData에 저장
+            member.setRDate(String.valueOf(now)); // now 를 string으로 바꿔서 RData에 저장
 
             memberService.join(member);
             //member service 를 사용해 member 객체에 대해 join 메서드를 실행한다.
@@ -65,12 +63,12 @@ public class MemberController {
 //        System.out.println("member : "+member.getPasswd());
 //        System.out.println("member : "+member.getId());
 
-            if (member.getCode() != null) { // getCode 했을때 null 값이 아니라면, 즉 저장이 된 상태면
+            if (member.getMEMBERCODE() != null) { // getCode 했을때 null 값이 아니라면, 즉 저장이 된 상태면
                 return "redirect:/"; // 회원가입이 끝나서 가입하기를 누르면 home(root page) 으로 설정된 페이지로 돌아감
             } else {
                 return "members/newregisters"; // 저장이 안되었으면 회원가입 페이지로
             }
-        }catch (Exception e){
+        }catch (IllegalStateException e){
             System.out.println("아이디 중복으로 에러 발생");
             return "members/newregisters"; // 아이디에 중복이 있어서 에러가 발생하면 다시 회원가입 페이지로
         }
@@ -93,7 +91,7 @@ public class MemberController {
             // findById 로 DB에 아이디가 저장되어있는지 여부 확인
             // 만약 저장되어있다면 chkID 값에 DB에 있는 아이디가 찾아진 후 result = false
             // 아니면 데이터를 찾을 수 없어 에러가 발생할 것임
-            String chkID = memberRepository.findById(userid).get().getId();
+            String chkID = memberRepository.findById(userid).get().getMID();
             if (chkID.equals(userid)) {
                 result = false;
                 System.out.println("중복된 아이디 : " + result);

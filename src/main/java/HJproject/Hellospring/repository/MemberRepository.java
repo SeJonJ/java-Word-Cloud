@@ -9,13 +9,13 @@ public interface MemberRepository {
 
     Member save(Member member);
 
-    Optional<Member> findByCode(Long code);
-    Optional<Member> findByName(String name);
-    Optional<Member> findById(String ID);
-    Optional<Member> findByPasswd(String passwd);
-    Optional<Member> findBySex(String sex);
-    Optional<Member> findByEmail(String email);
-    Optional<Member> findByEmaddress(String emaddress);
+    Optional<Member> findBycode(Long MEMBERCODE);
+    Optional<Member> findByName(String MNAME);
+    Optional<Member> findById(String MID);
+    Optional<Member> findByPasswd(String MPASSWD);
+    Optional<Member> findBySex(String MGENDER);
+    Optional<Member> findByEmail(String MEMAIL);
+    Optional<Member> findByEmaddress(String MEMADDRESS);
     Optional<Member> findByRData(String RData);
 
     List<Member> findAll(); // 모든 회원 리스트 반환

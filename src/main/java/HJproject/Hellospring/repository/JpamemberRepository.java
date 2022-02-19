@@ -1,5 +1,6 @@
 package HJproject.Hellospring.repository;
 
+
 import HJproject.Hellospring.domain.member.Member;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,24 +25,24 @@ public class JpamemberRepository implements MemberRepository{
 
         System.out.println("########### 회원 가입 완료 ###########");
 
-        em.persist(member); // persist 는 영속화 즉, member 를 저장한다는 의미 => SQL 따위 필요없다
+        em.persist(member); // persist 는 영속화 즉, member 를 저장한다는 의미 => insert SQL 따위 필요없다
         return member;
     }
 
     @Override
-    public Optional<Member> findByCode(Long code) {
-        Member member = em.find(Member.class, code);
+    public Optional<Member> findBycode(Long MEMBERCODE) {
+        Member member = em.find(Member.class, MEMBERCODE);
         return Optional.ofNullable(member);
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
+    public Optional<Member> findByName(String MNAME) {
         // 각 컬럼명으로 DB 정보를 검색할때 사용가능한 것이 JPQL
         // 일반적인 SQL 과 비슷한데 딱 하나 다른점이라고 하면 일반 SQL이 중간에 * 로 테이블을 선택하고 컬럼명을 넣는다면
         // 이때 쿼리에서의 MM은 일종의 별칭으로 어떻게 설정해줘도 상관은 없지만 꼭 필요하다.
         // 또한 파라미터를 사용법중 이름 기준 파라미터를 사용하는 경우 JPQL에서 앞에 : 를 붙여준다
-        List<Member> result = em.createQuery("select MM from Member MM where MM.name=:name", Member.class)
-                .setParameter("name", name)
+        List<Member> result = em.createQuery("select MM from MEMBER MM where MM.MNAME=:MNAME", Member.class)
+                .setParameter("MNAME", MNAME)
                 .getResultList();
 
         return result.stream().findAny();
@@ -50,18 +51,18 @@ public class JpamemberRepository implements MemberRepository{
 
     /* 5. 내 맘대로 구현하기 */
     @Override
-    public Optional<Member> findById(String ID) {
-        List<Member> result = em.createQuery("select m from Member m where m.id=:id", Member.class)
-                .setParameter("id", ID)
+    public Optional<Member> findById(String MID) {
+        List<Member> result = em.createQuery("select m from MEMBER m where m.MID=:MID", Member.class)
+                .setParameter("MID", MID)
                 .getResultList();
 
         return result.stream().findAny();
     }
 
     @Override
-    public Optional<Member> findByPasswd(String passwd) {
-        List<Member> result = em.createQuery("select m from Member m where m.passwd=:passwd", Member.class)
-                .setParameter("passwd", passwd)
+    public Optional<Member> findByPasswd(String MPASSWD) {
+        List<Member> result = em.createQuery("select m from MEMBER m where m.MPASSWD=:MPASSWD", Member.class)
+                .setParameter("MPASSWD", MPASSWD)
                 .getResultList();
 
         return result.stream().findAny();
@@ -73,9 +74,9 @@ public class JpamemberRepository implements MemberRepository{
     /* 6. 내 맘대로 구현하기 step 2 */
 
     @Override
-    public  Optional<Member> findBySex(String sex){
-        List<Member> result = em.createQuery("select m from Member m where m.sex:sex", Member.class)
-                .setParameter("sex", sex)
+    public  Optional<Member> findBySex(String GENDER){
+        List<Member> result = em.createQuery("select m from MEMBER m where m.GENDER:GENDER", Member.class)
+                .setParameter("MGENDER", GENDER)
                 .getResultList();
 
         return result.stream().findAny();
@@ -99,7 +100,7 @@ public class JpamemberRepository implements MemberRepository{
 
     @Override
     public List<Member> findAll() {
-        List<Member> result = em.createQuery("select m from Member m ", Member.class)
+        List<Member> result = em.createQuery("select m from MEMBER m ", Member.class)
                 .getResultList();
         return result;
     }

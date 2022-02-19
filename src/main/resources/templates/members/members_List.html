@@ -22,13 +22,13 @@
         <!--thymeleaf 식 for 문-->
         <!--MemberController 로 넘어가는 members-->
             <tr th:each="member : ${members}">
-                <td th:text="${member.code}"></td>
-                <td th:text="${member.name}"></td>
-                <td th:text="${member.id}"></td>
-                <td th:text="${member.sex}"></td>
+                <td th:text="${member.MEMBERCODE}"></td>
+                <td th:text="${member.MNAME}"></td>
+                <td th:text="${member.MID}"></td>
+                <td th:text="${member.MGENDER}"></td>
                 <!-- thymeleaf 에서 여러 문자를 합쳐서 출력하기 위해서 | | 를 사용하면 된다-->
-                <td th:text="|${member.email}@${member.emaddress}|"></td>
-                <td th:text="${member.RData}"></td>
+                <td th:text="|${member.MEMAIL}@${member.MEMADDRESS}|"></td>
+                <td th:text="${member.RDate}"></td>
             </tr>
             </tbody>
         </table>
