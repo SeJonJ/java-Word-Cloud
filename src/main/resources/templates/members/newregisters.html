@@ -32,9 +32,15 @@
 
             <!--var idChk_val = $("#idChk").val();-->
             <!--Alert 는 스크립트 순서 그대로 나온다-->
+            <!--스크립트에서 forid값.form안에id값.value 로 해당 값을 가져올 수 있다-->
             if(regForm.name.value == ""){
                 regForm.name.focus();
                 alert("이름을 입력해주세요");
+                return false;
+                }
+            if(regForm.userid.value == ""){
+                regForm.userid.focus();
+                alert("아이디 값이 존재하지 않습니다. 꼭! 입력해주세요")
                 return false;
                 }
             if($("#idChk").val() == "N"){
@@ -69,7 +75,7 @@
                 <option value="nate.com">nate.com</option>
                 <option value="google.com">google.com</option>
                 <!--이메일 확인 스크립트-->
-                <script th:inline="javascript">
+                <script th:inline="javascript"><!--여기 스크립트는 다시 짜자-->
 								function SetEmailTail(emailValue) {
     								var email = document.all("email")    // 사용자 입력
     								var emailTail = document.all("emaddress") // Select box
@@ -129,7 +135,7 @@
                             alert("사용가능한 아이디에용! 계속해주세요");
 
                         }else if(idChk == ""){
-                            alert("아이디가 확인되지 않았습니다. 다시 시도해주세요");
+                            alert("에러가 발생했습니다. 다시 시도해주세요");
                         }
                     }
                 })

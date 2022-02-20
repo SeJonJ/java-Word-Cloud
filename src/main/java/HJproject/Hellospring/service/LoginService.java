@@ -38,7 +38,7 @@ public class LoginService {
 
 
         }else{
-
+            System.out.println("아이디나 패스워드 오류!!");
             return null; // 아니면 null 리턴
 
         }
