@@ -68,35 +68,27 @@
     </form>
 
 
-    <form class="login-form" id="loginForm" action="/login" method="post">
-      <input type="text" name="loginid" placeholder="아이디"/>
-      <input type="password" name="loginpw" placeholder="비밀번호"/>
+    <form class="login-form" id="loginForm" action="/login" method="post" onsubmit="return fn_submitChk();">
+      <input type="text" id="loginid" name="loginid" placeholder="아이디"/>
+      <input type="password" id="loginpw" name="loginpw" placeholder="비밀번호"/>
       <button>로그인</button>
-<!--      <script th:inline="javascript">-->
-<!--            function fn_loginChk(){-->
+      <script th:inline="javascript">
+            function fn_submitChk(){
 
-<!--            &lt;!&ndash;request 파라미터에 userid 를 넣어서 서버단으로 보냄&ndash;&gt;-->
+            if(loginForm.loginid.value == ""){
+                loginForm.loginid.focus();
+                alert("아이디가 없어요ㅠ.ㅠ 다시 입력해주세요");
+                return false;
+                }
+            if(loginForm.loginpw.value == ""){
+                loginForm.loginpw.focus();
+                alert("패스워드가 없어요ㅠ,ㅠ 다시 입력해주세요");
+                return false;
+                }
 
-<!--                $.ajax({-->
-<!--                    url : "/login", &lt;!&ndash;데이터를 주고받을 주소&ndash;&gt;-->
-<!--                    type : "post", &lt;!&ndash;보내는 방식 get post&ndash;&gt;-->
-<!--                    dataType : 'json', &lt;!&ndash;서버로부터 받는 값의 데이터 형식&ndash;&gt;-->
-<!--                    data : params, &lt;!&ndash;보내는 데이터 형식?&ndash;&gt;-->
+            }
+            </script>
 
-<!--                    &lt;!&ndash;서버에서 데이터가 넘어오면 success 에 들어옴 이때 result는 서버에서 응답받아서 넘어온 데이터 &ndash;&gt;-->
-
-<!--                    success : function(result){-->
-<!--                    &lt;!&ndash;json 방식으로 넘어온 데이터는 key : value 형식이기 때문에 result.result 로 해야 값을 가져올 수 있음?&ndash;&gt;-->
-<!--                    var loginChk = result.result-->
-<!--                        if(loginChk == 1){-->
-
-<!--                            alert("중복된 아이디에용! 다른걸로 해주세요");-->
-<!--                            return false;-->
-<!--                        }-->
-<!--                    }-->
-<!--                })-->
-<!--            }-->
-<!--            </script>-->
       <p class="message">아이디가 없다면? <a href="#">회원가입</a></p>
     </form>
   </div>

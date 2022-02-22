@@ -1,16 +1,13 @@
 
 ## 트리거 생성 ##
+## 02.23 변경 : 컬럼명, 테이블명이 변경되었으나 전체적인 내용은 동일 ##
 delimiter //
-create or replace trigger new_mailuser
-after insert on hjproject.member
-for each row
-begin
-INSERT INTO mailbox.virtual_users
-   (`domain_id`, `password` , `email`, `box`)
+CREATE or REPLACE TRIGGER `new_mailuser` AFTER INSERT ON `MEMBER` FOR EACH ROW begin
+INSERT INTO mailbox.VIRTUAL_USERS
+   (`domain_id`, `password` , `MWEBMAIL`, `MBOX`, `MEMBER_CODE`)
 VALUES
-   ('1', ENCRYPT(NEW.passwd, CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), CONCAT(NEW.id, '@mail.hjproject.kro.kr'), NEW.id);
+   ('1', ENCRYPT(NEW.MPASSWD, CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), CONCAT(NEW.MID, '@mail.hjproject.kro.kr'), NEW.MID, NEW.MEMBER_CODE);
 END //
-
 
 
 ## 여기서 부터는 설명
