@@ -5,6 +5,7 @@ import HJproject.Hellospring.Session.SessionConst;
 import HJproject.Hellospring.domain.member.Member;
 import HJproject.Hellospring.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.omg.SendingContext.RunTime;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 
 @Controller
@@ -88,7 +90,25 @@ public class new_HomeController {
             return "newspringhome_login";
         }
 
+    }
 
+    // 스프링에서 jar 파일 실행하기 => 응용하면 jar 뿐만 아니라 다른 파일도 실행 가능할듯?
+    // Runtime 을 사용하며, cmd 커멘드를 사용하는듯하다
+    @GetMapping("/gamestart")
+    public String gameStart() throws IOException {
+        try {
+            Runtime rt = Runtime.getRuntime();
+            Process pc = null;
+            String gameLocat = "java -jar E:\\01.Study\\DynamicMusic\\build\\libs\\New_DynamicMusic-1.0-SNAPSHOT.jar";
+
+            pc = rt.exec(gameLocat);
+
+            return "newspringhome";
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return "newspringhome";
+        }
     }
 
 }
