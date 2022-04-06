@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 
 @Controller
@@ -95,15 +97,29 @@ public class new_HomeController {
     // 스프링에서 jar 파일 실행하기 => 응용하면 jar 뿐만 아니라 다른 파일도 실행 가능할듯?
     // Runtime 을 사용하며, cmd 커멘드를 사용하는듯하다
     @GetMapping("/gamestart")
-    public String gameStart() throws IOException {
+    public String gameStart(@SessionAttribute(name = SessionConst.LOGIN_MEMBER, required = false) Member loginMember, Model model) throws IOException {
         try {
+            // path 로 게임 경로 가져와서 runtime 로 시작
             Runtime rt = Runtime.getRuntime();
-            Process pc = null;
-            String gameLocat = "java -jar E:\\01.Study\\DynamicMusic\\build\\libs\\New_DynamicMusic-1.0-SNAPSHOT.jar";
+            File path = new File("");
+            String gameLocat = "java -jar "+ path.getCanonicalPath()+"/src/main/resources/DynamicMusic/New_DynamicMusic-3.0-SNAPSHOT.jar";
+            System.out.println(gameLocat);
+            rt.exec(gameLocat);
+            System.out.println("game start!");
 
-            pc = rt.exec(gameLocat);
 
-            return "newspringhome";
+            if(loginMember.getMEMBERCODE() == 0){
+
+                model.addAttribute("member", loginMember);
+//                System.out.println("관리자 로그인 성공");
+
+                return "newspringhome_admin";
+
+            }else {
+                model.addAttribute("member", loginMember);
+//                System.out.println("일반 회원 로그인 성공");
+                return "newspringhome_login";
+            }
 
         }catch (Exception e){
             e.printStackTrace();
