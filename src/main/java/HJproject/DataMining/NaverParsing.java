@@ -25,7 +25,7 @@ public class NaverParsing implements APIdata {
         komoran.setUserDic(path + "/userDictionary/koreanDic.user");
 
         // NaverCrawler 클래스의 crawlerData 메소드를 사용해서 크롤링한 STring 을 얻어오기
-        String dataString = new NaverCrawler().Navercrawler(word);
+        String dataString = new NaverCrawler().crawler(word);
 
         // 가져온 String을 komoran analyze 메소드에 넣기
         KomoranResult komoranResult = komoran.analyze(dataString);
@@ -36,6 +36,7 @@ public class NaverParsing implements APIdata {
         // list 파일로 떨어진 analyzeList 를 HashMap 에 넣어서 중복된 데이터를 삭제하고
         // Conllections.frequency 를 사용해서 몇 번이나 중복되었는지 분석하여 저장한다.
         // 최종적으로 listHash 에는 단어=중복횟수 로 저장된다.
+        // Collections.frequency(Collections객체, 값)
         HashMap<String, Integer> listHash = new HashMap<>();
         for (String l : analyzeList) {
             int num = Collections.frequency(analyzeList, l);

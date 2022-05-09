@@ -17,7 +17,7 @@ public class NaverCrawler implements APIdata{ // 베이스 URL
     final String baseUrl = "https://openapi.naver.com/v1/search/blog.json?query=";
 
 
-    public String Navercrawler(String word){
+    public String crawler(String word){
         String crawerString = null;
 
         try {
