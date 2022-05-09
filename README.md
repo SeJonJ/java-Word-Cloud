@@ -38,5 +38,6 @@
 
 활용한 API 목록
 - 네이버 검색 api 주소 : https://developers.naver.com/main/
+- 데이터 파싱을 위한 Java 기반의 형태소 분석기 : https://docs.komoran.kr/ 
 - JQCloud : http://mistic100.github.io/jQCloud/index.html
 - AnyChart : https://docs.anychart.com/Basic_Charts/Tag_Cloud
