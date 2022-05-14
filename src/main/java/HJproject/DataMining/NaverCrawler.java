@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.*;
 
-public class NaverCrawler implements APIdata{ // 베이스 URL
+public class NaverCrawler { // 베이스 URL
     final String baseUrl = "https://openapi.naver.com/v1/search/blog.json?query=";
 
 
@@ -27,7 +27,7 @@ public class NaverCrawler implements APIdata{ // 베이스 URL
             String url = URLEncoder.encode(word, "UTF-8");
             // crawler 의 search 메소드 사용
             // 이때 naverID 와 naverSecret 은 APIdata 안에 있는 내용 사용
-            String response = search(naverID, naverSecret, url);
+            String response = search(APIdata.naverSearchID, APIdata.naverSearchSecret, url);
 
             // 필드값은 title 가 desc 2개!
             // 크롤링을 하게되면 field 가 여러개가 나오는데 이 중에서 title 와 desc 만 가져온다는 의미

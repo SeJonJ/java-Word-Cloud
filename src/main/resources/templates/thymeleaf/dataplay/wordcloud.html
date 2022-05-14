@@ -6,8 +6,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!--    d3 -->
+<!--
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
+-->
     <!--    JQCloud -->
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.3/jqcloud.min.js" integrity="sha512-gZUG2nobmGEaF3G67OVAmD0lQGbkzN5t9tuiOndqzVNiWBLkCo4o6UBkBLkvKfTPWlVBJPI8dvkLJTwcJbKwvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.3/jqcloud.css" integrity="sha512-WrGUNi0fHDkVluVxLEbsjpuzBTCiUyTJAFi20txqcKH4V8uEOaRQ+G8LnNMTuvmauaY5J05DzNayZ6RmUMy9FA==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
@@ -127,7 +129,7 @@
 
             // ajax 방식으로 서버에 던짐
             $.ajax({
-                url: "/getData", // 보내는 url
+                url: "/wordCloud", // 보내는 url
                 type: "get", // 보내는 방식 post
                 data: word, // 보내는 데이터 word 라는 json 형태
                 dataType: 'json', <!--서버로부터 받는 값의 데이터 형식-->
@@ -174,8 +176,6 @@
                     chart.angles([0]);
 
                     chart.draw();
-
-
 
 
                 },

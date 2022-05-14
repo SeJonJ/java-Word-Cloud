@@ -24,8 +24,8 @@ public class DataController {
     }
 
 
-    @RequestMapping(value = "/getData", method = RequestMethod.GET)
-    public void sendData(HttpServletResponse res, HttpServletRequest req) throws IOException {
+    @RequestMapping(value = "/wordCloud", method = RequestMethod.GET)
+    public void wordCloud(HttpServletResponse res, HttpServletRequest req) throws IOException {
 
         // 웹에서 get으로 요청할때 보내온 파라미터 중 word 파라미터를 가져옴
        String word = req.getParameter("word");
