@@ -1,3 +1,7 @@
+# 프로젝트 리워크
+프로젝트 리워크를 통해 기존 springboot 기반에서 springboot+nextjs 형태로 추가 개발 후 아래의 새로운 레포지토리로 이동했습니다.
+https://github.com/SeJonJ/word-cloud-app
+
 # DataPlay Project : 데이터 갖고 놀기
 네이버 검색 API를 통한 을 통한 Word Cloud 만들기!
 
